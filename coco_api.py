@@ -55,4 +55,4 @@ for i, imgId in enumerate(imgIds):
         obj += xywh
         objs.append(obj)
     make_pic_txt(txt_path, objs)
-    print(f"\r [{round((i/total)*100,2)} %] ({i} / {total})    ", end = "")
+    print(f"\r [{round((i/total)*100,2)} %] ({i} / {total}) \U0001F680   ", end = "")
