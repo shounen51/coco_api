@@ -28,7 +28,7 @@ txt_dir = Path(config['output']['labels_dir'].format(base_dir=str(output_dir)).r
 if not txt_dir.exists():
     txt_dir.mkdir(parents=True)
 
-my_class = config['classes']
+my_class = list(config['names'].values())
 
 # 输出检查
 print("Annotation File:", ann_file)
