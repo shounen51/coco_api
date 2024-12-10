@@ -1,0 +1,23 @@
+
+data:
+  base_dir: "C:/dataset/ori_coco/images"
+  type: "val2017"
+  annotations: "annotations/instances_{type}.json"
+  images: "{base_dir}/{type}"
+
+output:
+  base_dir: "C:/dataset/wheelchair/coco/images"
+  labels_dir: "{base_dir}"
+
+classes:
+  - "person"
+  - "bicycle"
+  - "car"
+  - "motorcycle"
+  - "bus"
+  - "train"
+  - "backpack"
+  - "handbag"
+  - "suitcase"
+  - "wheelchair"
+  - "person_on_wheelchair"
