@@ -1,3 +1,4 @@
+import random
 import os, shutil
 from pycocotools.coco import COCO
 import skimage.io as io
@@ -12,7 +13,7 @@ def make_pic_txt(pic_name, obj_list):
         txt.write(_str)
 
 
-with open("config.yaml", "r") as file:
+with open("config.yaml", "r", encoding='utf-8') as file:
     config = yaml.safe_load(file)
 
 data_dir = Path(config['data']['base_dir'])
@@ -51,6 +52,11 @@ catIds = coco.getCatIds(catNms=my_class)
 for c in catIds:
     imgIds += coco.getImgIds(catIds=c)
 imgIds = list(set(imgIds))
+num = config['output_num']
+# shuffle imgIds
+if num > 0:
+    random.shuffle(imgIds)
+    imgIds = imgIds[:num]
 total = len(imgIds)
 
 for i, imgId in enumerate(imgIds):

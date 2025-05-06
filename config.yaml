@@ -1,14 +1,17 @@
 
 data:
   base_dir: "C:/dataset/ori_coco/images"
-  type: "val2017"
+  type: "train2017"
   annotations: "annotations/instances_{type}.json"
   images: "{base_dir}/{type}"
 
 output:
-  base_dir: "C:/dataset/wheelchair/coco/images"
+  base_dir: "C:/dataset/wheelchair/coco_500/images"
   labels_dir: "{base_dir}"
 
+output_num: 500 # -1 表示不限制數量
+
+# 以下的class name如果對應的到原始的coco class name就會保留該筆訓練資料，且僅有對應到的class name會被保留
 names:
   0: "person"
   1: "bicycle"
